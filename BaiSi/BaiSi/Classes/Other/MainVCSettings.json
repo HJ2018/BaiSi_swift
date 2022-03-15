@@ -1,0 +1,26 @@
+[
+ {
+    "vcName": "EssenceTableController",
+    "title": "精华",
+    "tabBar":"tabBar_essence",
+    "tabBarClick":"tabBar_essence_click_icon"
+ },
+ {
+     "vcName": "NewTableController",
+     "title": "新帖",
+     "tabBar":"tabBar_new",
+     "tabBarClick":"tabBar_new_click_icon"
+ },
+ {
+     "vcName": "FriendTrendsTableController",
+     "title": "关注",
+     "tabBar":"tabBar_friendTrends",
+     "tabBarClick":"tabBar_friendTrends_click_icon"
+ },
+ {
+     "vcName": "MeTableconteoller",
+     "title": "我的",
+     "tabBar":"tabBar_me",
+     "tabBarClick":"tabBar_me_click_icon"
+ }
+ ]
