@@ -2,15 +2,17 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
+    var customTabBar = CustomTabBar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
+        self.setValue(customTabBar, forKey: "tabBar")
         addChildViewControllers()
     }
 
     func addChildViewControllers() {
         
-    
         /// 1.获取json文件路径
         let jsonPath = Bundle.main.path(forResource: "MainVCSettings", ofType: "json")
         let jsonData = NSData(contentsOfFile: jsonPath!)
@@ -33,13 +35,10 @@ class MainViewController: UITabBarController {
         let cls:AnyClass = NSClassFromString(namespace + "." + childControllerName)!
         let vcCls = cls as! UIViewController.Type
         let vc = vcCls.init()
-        vc.title = title
-        vc.tabBarItem.image = UIImage(named: tabBarImage)
-        vc.tabBarItem.selectedImage = UIImage(named: tabBarImageClick)
-        let nav = UINavigationController()
-        nav.addChild(vc)
+        vc.tabBarItem = UITabBarItem(title: title,image:UIImage(named:tabBarImage),
+                                        selectedImage:UIImage(named:tabBarImageClick))
+        let nav = UINavigationController(rootViewController:vc)
         addChild(nav)
-        
     }
     
 }
